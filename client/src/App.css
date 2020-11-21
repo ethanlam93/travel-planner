@@ -59,9 +59,12 @@ body{
 
 .nav-wrapper {
    color: black;
-   background-color: white;
+  background-color: rgb(255, 255, 255, 0.1)
 }
 
+nav {
+  background-color: rgb(255, 255, 255, 0.1) !important
+}
   h4 {
     color: white;
   }

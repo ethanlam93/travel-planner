@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
+import logo from "../logo.png";
 
 class Logout2 extends Component {
   onLogoutClick = (e) => {
@@ -12,58 +13,61 @@ class Logout2 extends Component {
 
   render() {
     return (
-      <div className="row">
-        <Link
-          to="/"
-          style={{
-            fontFamily: "monospace",
-            float: "left",
-          }}
-          className="col s2 brand-logo black-text"
-        >
-          <i className="material-icons">code</i>Travel-app
-        </Link>
-
+      <>
         {this.props.auth.isAuthenticated ? (
           <div>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem",
-                float: "right",
-                marginRight: "10px",
-                background: "#090088",
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable accent-3"
-            >
-              Logout
-            </button>
-            <Link
-              to="/dashboard"
-              className="btn btn-large hoverable accent-3"
-              style={{
-                marginRight: 10,
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem",
-                float: "right",
-                paddingLeft: "23px",
-                paddingTop: "3px",
-                background: "#87dfd6",
-                color: "black",
-              }}
-            >
-              Dashboard
-            </Link>
+            <div className="row">
+              <button
+                style={{
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem",
+                  float: "right",
+                  marginRight: "10px",
+                  background: "#090088",
+                }}
+                onClick={this.onLogoutClick}
+                className="btn btn-large waves-effect waves-light hoverable accent-3"
+              >
+                Logout
+              </button>
+              <Link
+                to="/dashboard"
+                className="btn btn-large hoverable accent-3"
+                style={{
+                  marginRight: 10,
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem",
+                  float: "right",
+                  paddingLeft: "23px",
+                  paddingTop: "3px",
+                  background: "#87dfd6",
+                  color: "black",
+                }}
+              >
+                Dashboard
+              </Link>
+            </div>
+            <div className="center-align">
+              <img
+                src={logo}
+                style={{
+                  fontFamily: "monospace",
+                  width: "200px",
+                  height: "200px",
+                  borderRadius: "80% 20% 81% 19% / 26% 64% 36% 74% ",
+                }}
+                className="col s2 brand-logo black-text"
+              ></img>
+            </div>
           </div>
         ) : (
           <div></div>
         )}
-      </div>
+      </>
     );
   }
 }

@@ -224,8 +224,13 @@ class SearchActivity extends Component {
                   />
                   <br />
                   <button
+                  style={{
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem",
+                    background: "#090088",
+                  }}
                     type="submit"
-                    className="Search btn btn-large hoverable blue accent-3"
+                    className="Search btn btn-large hoverable accent-3"
                   >
                     Search{" "}
                   </button>

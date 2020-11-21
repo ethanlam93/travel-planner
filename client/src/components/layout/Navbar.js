@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logoutUser } from "../../actions/authActions";
+import logo from "../logo.png";
 
 class Navbar extends Component {
   render() {
@@ -20,7 +21,7 @@ class Navbar extends Component {
                   }}
                   className="col s4 brand-logo center black-text"
                 >
-                  <i className="material-icons">code</i>Travel-Hub
+                  Venture
                 </Link>
                 <Link
                   to="/register"

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import logo from "../logo.png";
 
 class Register extends Component {
   constructor() {
@@ -52,7 +53,18 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
 
-    return (
+    return (<>
+      <div className="center-align">
+          <img
+            src={logo}
+            style={{
+              fontFamily: "monospace",
+              width: "200px",
+              height: "200px",
+              borderRadius: "80% 20% 81% 19% / 26% 64% 36% 74%  ",
+            }}
+          ></img>
+        </div>
       <div style={{ background: "#fffffe" , paddingBottom: "1rem", marginTop: "2rem", marginBottom: "2rem"}} className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -145,6 +157,7 @@ class Register extends Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }
