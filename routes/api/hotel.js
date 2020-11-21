@@ -41,7 +41,7 @@ router.post("/getHotels", (req, res) => {
           checkInDate: startDate,
           checkOutDate: endDate,
           sort: "DISTANCE",
-          includeClosed: false
+          includeClosed: true
         })
         .then((response) => {
           return amadeus.next(response);
