@@ -40,8 +40,8 @@ router.post("/getHotels", (req, res) => {
           radiusUnit: "MILE",
           checkInDate: startDate,
           checkOutDate: endDate,
-          sort: "DISTANCE"
-
+          sort: "DISTANCE",
+          includeClosed: true
         })
         .then((response) => {
           return amadeus.next(response);

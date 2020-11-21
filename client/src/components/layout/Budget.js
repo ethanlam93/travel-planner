@@ -30,6 +30,16 @@ class Budget extends Component {
     this.props.getSavedActivities(this.props.auth.user.id);
     this.props.getSavedFlights(this.props.auth.user.id);
     this.props.getSavedHotels(this.props.auth.user.id);
+    fetch(`/api/users/getSaving/${this.props.auth.user.id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json())
+    .then(saving => {
+        console.log("this is your saving",saving)
+        this.setState({...this.state,savingsGoal : saving})
+    });
   };
 
   getSavings = () => {

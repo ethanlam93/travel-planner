@@ -24,6 +24,7 @@
     "cors-anywhere": "^0.4.3",
     "date-fns": "^2.16.1",
     "express": "^4.16.4",
+    "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.3.0",
     "materialize-css": "^1.0.0-rc.2",
