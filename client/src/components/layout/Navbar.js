@@ -14,16 +14,6 @@ class Navbar extends Component {
             <nav className="z-depth-5">
               <div className="nav-wrapper">
                 <Link
-                  to="/"
-                  style={{
-                    fontFamily: "monospace",
-                    display: "flex",
-                  }}
-                  className="col s4 brand-logo center black-text"
-                >
-                  Venture
-                </Link>
-                <Link
                   to="/register"
                   style={{
                     width: "120px",

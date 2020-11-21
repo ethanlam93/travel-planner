@@ -51,18 +51,6 @@ class Logout2 extends Component {
                 Dashboard
               </Link>
             </div>
-            <div className="center-align">
-              <img
-                src={logo}
-                style={{
-                  fontFamily: "monospace",
-                  width: "200px",
-                  height: "200px",
-                  borderRadius: "80% 20% 81% 19% / 26% 64% 36% 74% ",
-                }}
-                className="col s2 brand-logo black-text"
-              ></img>
-            </div>
           </div>
         ) : (
           <div></div>
