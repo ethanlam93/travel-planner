@@ -207,7 +207,7 @@ const SearchHotel = (props) => {
                         <div>Room Description: {`${description}`} </div>
                         <div>Booking Id : {`${bookingID}`}</div>
                         {/* button to save */}
-                        {!props.selectedHotels.includes(key) ? (
+                        {!props.selectedHotels.includes(key) && props.auth.isAuthenticated ?  (
                           <button
                             id={key}
                             className="btn waves-effect waves-light"

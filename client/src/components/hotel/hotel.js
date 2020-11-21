@@ -1,10 +1,12 @@
 import React from "react";
 import SearchHotel from "../Search/SearchHotel.js";
 import Logout2 from "../layout/Logout2"
+import Navbar from "../layout/Navbar"
 
 const Hotel = () => {
     return (
         <div>
+            <Navbar />
             <Logout2 />
             <div className="container valign-wrapper">
                 <div className="row">

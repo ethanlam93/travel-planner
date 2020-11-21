@@ -75,7 +75,7 @@ class SearchActivity extends Component {
                   : moment(item.time_end).format("MM-DD-YYYY")}
               </li>
               {/* button to save */}
-              {!this.props.activities.selectedActivities.includes(key) ? (
+              {!this.props.activities.selectedActivities.includes(key) && this.props.auth.isAuthenticated ? (
                 <button
                   id={key}
                   className="btn waves-effect waves-light"
