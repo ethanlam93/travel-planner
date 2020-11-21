@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { logoutUser } from "../../actions/authActions";
 import PropTypes from "prop-types";
+
 class Logout2 extends Component {
   onLogoutClick = (e) => {
     e.preventDefault();
@@ -76,4 +77,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { loginUser })(Logout2);
+export default connect(mapStateToProps, { logoutUser })(Logout2);
