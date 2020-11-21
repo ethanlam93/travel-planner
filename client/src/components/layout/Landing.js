@@ -1,10 +1,12 @@
 import React from "react";
 import SearchFlight from "../Search/SearchFlight.js";
-import Navbar from "../layout/Navbar"
+import Navbar from "../layout/Navbar";
+import Logout2 from "../layout/Logout2";
 
 const Landing = () => {
   return (
     <div>
+      <Logout2 />
       <Navbar />
       <br></br>
       <br></br>
@@ -13,9 +15,7 @@ const Landing = () => {
       <div className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
-            <h4>
-              Ready for your next adventure?
-            </h4>
+            <h4>Ready for your next adventure?</h4>
             <p className="flow-text white-text text-lighten-1">
               Sign-up or Login to unlock all the features.
             </p>
