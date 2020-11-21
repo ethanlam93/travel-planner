@@ -421,7 +421,7 @@ const SearchFlight = (props) => {
                 <h5>Total price: ${flight.price.grandTotal}</h5>
               </div>
               <div>
-                {!props.selectedFlights.includes(i) && props.isAuthenticated? (
+                {!props.selectedFlights.includes(i) && props.auth.isAuthenticated ? (
                   <button
                     onClick={(event) => {
                       event.preventDefault();
