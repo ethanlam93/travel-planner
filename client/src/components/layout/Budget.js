@@ -30,16 +30,7 @@ class Budget extends Component {
     this.props.getSavedActivities(this.props.auth.user.id);
     this.props.getSavedFlights(this.props.auth.user.id);
     this.props.getSavedHotels(this.props.auth.user.id);
-    fetch(`/api/users/getSaving/${this.props.auth.user.id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json())
-    .then(saving => {
-        console.log("this is your saving",saving)
-        this.setState({...this.state,savingsGoal : saving})
-    });
+    this.getSavings()
   };
 
   getSavings = () => {
@@ -52,15 +43,19 @@ class Budget extends Component {
       .catch(err => console.log(err))
       .then(res => {
         console.log(res);
-        if (!res.bodyUsed)
-          return
-        else {
           res.json()
             .then(saving => {
               console.log("this is your saving", saving)
-              this.setState({ ...this.state, savingsGoal: saving })
+              this.setState({savingsGoal: saving,
+                savingsLength: this.savingsLength,
+                savingsPerWeek: this.savingsPerWeek,
+                style: this.style,
+                cardStyle: this.cardStyle,
+                HotelTable: this.HotelTable,
+                FlightTable: this.FlightTable,
+                ActivityTable: this.ActivityTable})
             });
-        }
+        
       });
   };
 
@@ -108,9 +103,9 @@ class Budget extends Component {
     console.log(this.state.savingsGoal);
     const info = {
       user: this.props.auth.user.id,
-      goal: this.this.state.savingsGoal
+      goal: this.state.savingsGoal
     }
-    fetch(`/api/users/postSaving/`, {
+    fetch(`/api/users/savingGoal/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -150,7 +145,6 @@ class Budget extends Component {
         {this.totalActivityCost()}
         {this.totalHotelCost()}
         {this.totalFlightCost()}
-        {this.getSavings()}
         <div className="col s12 m12 l3 center-align">
           <div style={{ width: "100%" }} className="card horizontal">
             <div className="card-stacked">
