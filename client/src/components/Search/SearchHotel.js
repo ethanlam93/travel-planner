@@ -11,6 +11,7 @@ import {
 } from "../../actions/hotelAction";
 import M from "materialize-css";
 import { render } from "react-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 const SearchHotel = (props) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -163,6 +164,8 @@ const SearchHotel = (props) => {
                 <div>No hotel can be found</div>
               ) : (
                 props.hotel.map((item, id) => {
+                  const uniqueId = uuidv4()
+                  item.uniqueId = uniqueId
                   const key = id;
                   const name = item.hotel.name;
                   const phone = item.hotel.contact

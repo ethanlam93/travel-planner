@@ -108,7 +108,7 @@ router.put("/deleteHotel", (req, res) => {
   console.log(user, id);
   User.findByIdAndUpdate(
     user,
-    { $pull: { hotels: { "hotel.hotelId": id }  } },
+    { $pull: { hotels: { uniqueId: id }  } },
     { new: true }
   )
     .then((response) => {

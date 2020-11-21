@@ -106,6 +106,30 @@ class Budget extends Component {
     this.setState({ style: "" });
     this.setState({ savingsGoal: this.state.savingsGoal });
     console.log(this.state.savingsGoal);
+    const info = {
+      user: this.props.auth.user.id,
+      goal: this.this.state.savingsGoal
+    }
+    fetch(`/api/users/postSaving/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(info)
+    })
+      .catch(err => console.log(err))
+      .then(res => {
+        console.log(res);
+        // if (!res.bodyUsed)
+        //   return
+        // else {
+        //   res.json()
+        //     .then(saving => {
+        //       console.log("this is your saving", saving)
+        //       this.setState({ ...this.state, savingsGoal: saving })
+        //     });
+        // }
+      });
   };
 
   onHotelClick = () => {

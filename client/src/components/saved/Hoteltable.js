@@ -10,11 +10,11 @@ class HotelTable extends Component {
 
   renderTableData() {
     return this.props.hotels.map((hotel, index) => {
-      const name = hotel.hotel.name;
-      const address = hotel.hotel.address.lines;
-      const contact = hotel.hotel.contact.phone;
-      const ratings = hotel.hotel.rating;
-      const id = hotel.hotel.hotelId;
+      const name = hotel.hotel.name || "unknown";
+      const address = hotel.hotel.address.lines || "unknown";
+      const contact = hotel.hotel.contact.phone || "unknown";
+      const ratings = hotel.hotel.rating || "unknown"; 
+      const id = hotel.uniqueId;
       return (
         <tr key={index}>
           <td>{name}</td>

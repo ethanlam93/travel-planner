@@ -15,7 +15,7 @@ class ActivityTable extends Component {
 
   renderTableData() {
     return this.props.activities.savedActivities.map((travel, index) => {
-      const { image_url, name, category, cost, description, id } = travel;
+      const { image_url, name, category, cost, description, uniqueId } = travel;
       return (
         <tr key={index}>
           <td>
@@ -35,7 +35,7 @@ class ActivityTable extends Component {
               type="btn btn-small"
               onClick={(event) => {
                 event.preventDefault();
-                this.props.deleteActivity(id, this.props.auth.user.id);
+                this.props.deleteActivity(uniqueId, this.props.auth.user.id);
               }}
             >
               Delete

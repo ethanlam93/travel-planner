@@ -91,7 +91,7 @@ router.put("/deleteActivity", (req, res) => {
   console.log(user, id);
   User.findByIdAndUpdate(
     user,
-    { $pull: { activities: { id: id } } },
+    { $pull: { activities: { uniqueId: id } } },
     { new: true }
   )
     .then((response) => {

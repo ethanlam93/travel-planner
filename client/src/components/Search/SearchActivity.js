@@ -10,6 +10,7 @@ import {
 import M from "materialize-css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { v4 as uuidv4 } from 'uuid';
 const moment = require("moment"); // require
 
 class SearchActivity extends Component {
@@ -41,6 +42,8 @@ class SearchActivity extends Component {
       return this.props.activities.activities.map((item, id) => {
         //create a unique key for each event
         const key = id;
+        const uniqueId = uuidv4()
+        item.uniqueId = uniqueId
         return (
           <div key={key}>
             <ul className="container">
